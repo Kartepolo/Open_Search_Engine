@@ -30,8 +30,12 @@ class SimpleListener(StreamListener):
 
 if __name__ == '__main__':
     listener = SimpleListener(180)
-    auth = OAuthHandler(consumer_key, consumer_secret)
-    auth.set_access_token(access_token, access_token_secret)
+    ckey = 'mzuAIzE4v0884Ide7tEeGVwNX3333'
+    consumer_secret = '7B9OGQPuEeWnxcFQYCYsD9YS9gbXWr55meANidS9P2WLZoM64w'
+    access_token_key = '3602884696-AMTmxT0ngOKspuiRgIJxa4mhYUOluHdRhJPkawd'
+    access_token_secret = '8XAnvmfM22sZDogNA2xAtu1q70DwG7uas27k8Ra8LBHsL'
+    auth = OAuthHandler(ckey, consumer_secret)
+    auth.set_access_token(access_token_key, access_token_secret)
 
     stream = Stream(auth, listener)
-    stream.filter(locations = (42.268880, -71.772836))
+    stream.filter(locations = [-74,40,-73,41])
